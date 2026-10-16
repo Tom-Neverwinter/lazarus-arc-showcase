@@ -3,13 +3,13 @@
 ![Rust](https://img.shields.io/badge/Rust-000?logo=rust&logoColor=fff)
 ![ratatui](https://img.shields.io/badge/TUI-ratatui-1e1e1e)
 ![crates](https://img.shields.io/badge/crates-9-blue)
-![tests](https://img.shields.io/badge/tests-718-green)
+![tests](https://img.shields.io/badge/tests-723-green)
 
 A cell-grid world simulation in the Dwarf Fortress lineage — built to run cheap, to play
 solo or with a hundred others off one codebase, and to wear a 2.5D sprite skin over the
 same simulation that drives the terminal.
 
-Written in Rust. ~101,000 lines across nine crates, 718 tests.
+Written in Rust. ~101,000 lines across nine crates, 723 tests.
 
 ![Title screen](images/menu.png)
 
@@ -160,7 +160,7 @@ home opens when it is clear.
 | | |
 |---|---|
 | Rust | ~101,000 lines, 9 crates |
-| Tests | 718, across 88 files |
+| Tests | 723, across 89 files |
 | Biomes | 14 |
 | Composed themes | 42 |
 | Cooking recipes | 637 |
