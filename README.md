@@ -1,10 +1,15 @@
 # Lazarus Arc
 
+![Rust](https://img.shields.io/badge/Rust-000?logo=rust&logoColor=fff)
+![ratatui](https://img.shields.io/badge/TUI-ratatui-1e1e1e)
+![crates](https://img.shields.io/badge/crates-9-blue)
+![tests](https://img.shields.io/badge/tests-718-green)
+
 A cell-grid world simulation in the Dwarf Fortress lineage — built to run cheap, to play
 solo or with a hundred others off one codebase, and to wear a 2.5D sprite skin over the
 same simulation that drives the terminal.
 
-Written in Rust. ~27,000 lines across nine crates, 176 tests.
+Written in Rust. ~101,000 lines across nine crates, 718 tests.
 
 ![Title screen](images/menu.png)
 
@@ -60,7 +65,19 @@ A terminal client built on `ratatui`:
 
 ...and a 2.5D isometric client built on Bevy, with a rotating camera:
 
-![Town](images/town.png)
+![Town](images/town.jpg)
+
+## Light and weather
+
+A real sun moves across the day and casts soft shadows; figures throw their own. Windows
+let daylight into rooms in the colour of their glass. Torches flicker, fog veils the
+distance, water reflects the world upside down and carries a sky for every weather. Grass
+grows blades and the wind moves them. In split-screen, every view gets its own sky.
+
+| | |
+|---|---|
+| ![Dusk](images/light-dusk.jpg) | ![Night](images/light-night.jpg) |
+| ![Rain](images/weather-rain.jpg) | ![Snow](images/weather-snow.jpg) |
 
 ## Architecture
 
@@ -92,6 +109,18 @@ biomes, each with its own ground, flora, fauna and weather.
 
 Animals are born small, grow, breed, and are hunted.
 
+The ground is alive too. Water holds its volume and finds its level — rivers flow, rain
+fills pools, the sun dries them, and floods lift you and leave silt behind. Lava flows,
+crusts and sets, and melts snow. Fire leans downwind, burns hot in dry summers and barely
+at all in swamps. Undermined ground warns, then falls.
+
+![Flood in the town square](images/flood.jpg)
+
+Dig down and the world keeps going: ore veins you can see, caves to the bottom with
+glowworm roofs and mushroom groves, old mines that cave in, dwarf outposts some still live
+in, storm drains under the town, catacombs under every chapel that wake when the dead are
+moved, and desert tombs with a false chamber and a seal you should not break.
+
 ## Systems
 
 Character creation — class, race, appearance, starting kit, and two opening skills:
@@ -109,6 +138,19 @@ merchants shelter inside the gates overnight:
 |---|---|
 | ![Quest](images/quest-dialogue.png) | ![Trade](images/trade.png) |
 
+Trades climb to level 100 on a RuneScape-style curve. Ten metals mined by depth, ten
+grades of wood from trees that grow old, ten fibres and cloths, ten gems — feeding
+smithing, leatherworking, pottery, glassmaking, a kitchen of 637 recipes, and a brewhouse:
+grain mashed, fermented and stilled into whisky that ages by the hour in oak, apples
+pressed to cider, berries left on the skins for red wine, honey and water to mead. Failure costs
+what the work costs; at the top grades even a master fails, and pays.
+
+The world has faiths: wild altars, offering bowls you can steal from (with a 20-second
+grace to put it back), and powers with moods that remember what was done to them.
+
+In combat, creatures go for whoever hurt them most, a fall in a raid is a down rather
+than a respawn, and each weapon reaches as far as it is long.
+
 Beyond the hub town, glowing rifts stand in the field. Step on one and you are sealed into
 an arena with a boss, or a wave raid at one of the six gates ringing the hub. The portal
 home opens when it is clear.
@@ -117,10 +159,12 @@ home opens when it is clear.
 
 | | |
 |---|---|
-| Rust | ~27,000 lines, 9 crates |
-| Tests | 176, across 31 files |
+| Rust | ~101,000 lines, 9 crates |
+| Tests | 718, across 88 files |
 | Biomes | 14 |
 | Composed themes | 42 |
+| Cooking recipes | 637 |
+| Trade levels | 100 |
 | Renderers | 2, one simulation |
 
 ---
